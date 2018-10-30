@@ -2,6 +2,9 @@
   text-align: center;
 }
 .hero-body{
-  padding-top: .3rem;
+  padding: .4rem 0;
   margin:0;
+}
+h1{
+  color:green;
 }

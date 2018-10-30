@@ -6,13 +6,13 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-				<section class="hero">
+				<section class="hero is-bold is-dark has-text-weight-semibold	">
 					<div class="hero-body">
-						<h1 class="title">Surp/Def</h1>
-						<h2 class="subtitle">Month</h2>
+						<h1 class="title has-text-success">$42</h1>
+						<h2 class="subtitle">October</h2>
 					</div>
 				</section>
-				<div class="tabs is-small =mobile-only is-fullwidth">
+				<div class="tabs is-small is-hidden-mobile desktop-only is-fullwidth ">
 					<ul>
 						<li class="is-active">
 							<a>Overview</a>
@@ -25,6 +25,30 @@ class App extends Component {
 						</li>
 					</ul>
 				</div>
+				<table class="container is-fullwidth">
+					<thead>
+						<tr>
+							<th>Account</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Rent</td>
+							<td>$1360</td>
+						</tr>
+						<tr>
+							<td>Electricity</td>
+							<td>$80</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>Sum</td>
+							<td>$180</td>
+						</tr>
+					</tfoot>
+				</table>
 			</div>
 		)
 	}
