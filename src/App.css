@@ -8,3 +8,8 @@
 h1{
   color:green;
 }
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
