@@ -4,23 +4,6 @@ import Moment from 'react-moment'
 
 class App extends Component {
 	render() {
-		class Header extends Component {
-			state = {
-				class: 'hide'
-			}
-
-			_openMenu = () => {
-				this.setState({
-					class: 'open'
-				})
-			}
-
-			_hideMenu = () => {
-				this.setState({
-					class: 'hide'
-				})
-			}
-		}
 		return (
 			<div className="container">
 				<section className="hero is-bold is-dark has-text-weight-semibold	">
@@ -33,7 +16,7 @@ class App extends Component {
 					<div class="columns container is-gapless is-1-mobile">
 						<div class="column ">
 							<div class="box">
-								<h1 className="title has-text-success">$42</h1>
+								<h2 className="title has-text-success">$42</h2>
 							</div>
 						</div>
 						<div class="column ">
@@ -50,7 +33,7 @@ class App extends Component {
 						</div>
 						<div class="column ">
 							<div class="box">
-								<h1 className="title has-text-danger">Upcoming bills</h1>
+								<h1 className="title has-text-warning ">Upcoming bills</h1>
 								<h2 className="subtitle">5 Bills unpaid</h2>
 							</div>
 						</div>

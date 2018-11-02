@@ -1,6 +1,5 @@
 .container {
   text-align: center;
-  
 }
 .hero-body{
   padding: .4rem 0;
@@ -8,10 +7,6 @@
 }
 div.box{
   margin:15px 10px;
-}
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
+  max-height: 120px;
 }
 
