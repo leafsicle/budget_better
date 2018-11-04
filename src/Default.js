@@ -10,10 +10,12 @@ class Default extends Component {
 						<a className="active" aria-current="page" href="">
 							<i className="fas fa-balance-scale fa-3x" />
 						</a>
-						<div className="hero-body title">Better Budget</div>
-						<h2 className="subtitle">
-							<Moment element="span" format="MMMM" />
-						</h2>
+						<div className="hero-body title">
+							<h3>Better Budget</h3>
+							<span className="subtitle">
+								<Moment element="span" format="MMMM" />
+							</span>
+						</div>
 					</div>
 				</nav>
 

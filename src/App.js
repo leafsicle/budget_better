@@ -7,9 +7,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-				{/* <Default /> */}
-				<Test />
-				{/* <main>
+				<Default />
+				{/* <Test /> */}
+				<main>
 					<div class="columns container is-gapless is-1-mobile">
 						<div class="column ">
 							<div class="box">
@@ -38,7 +38,7 @@ class App extends Component {
 							</div>
 						</div>
 					</div>
-				</main> */}
+				</main>
 			</div>
 		)
 	}
