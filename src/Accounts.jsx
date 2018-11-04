@@ -14,7 +14,7 @@ class Accounts extends Component {
 						aria-label="main navigation"
 					>
 						<div className="navbar-brand ">
-							<a className="active" aria-current="page" href="">
+							<a className="active" aria-current="page" href="/">
 								<i className="fas fa-balance-scale fa-3x" />
 							</a>
 							<div className="hero-body title">

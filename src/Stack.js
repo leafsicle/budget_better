@@ -23,8 +23,10 @@ class Stack extends Component {
 					</div>
 					<div class="column">
 						<div class="box">
-							<h1 className="title has-text-info">Accounts</h1>
-							<h2 className="subtitle">you have 10 account active</h2>
+							<a href="./Accounts">
+								<h1 className="title has-text-info">Accounts</h1>
+								<h2 className="subtitle">you have 10 account active</h2>
+							</a>
 						</div>
 					</div>
 					<div class="column ">
