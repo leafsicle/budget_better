@@ -7,6 +7,10 @@
 .navbar a{
   margin: auto 0;
 }
+div.nav{
+  display: flex;
+  justify-content: space-between
+}
 .hero-body{
   padding: .4rem 0;
   margin:0;
@@ -14,5 +18,8 @@
 div.box{
   margin:15px 10px;
   /* max-height: 120px; */
+}
+.add,.edit{
+  border:none;
 }
 
