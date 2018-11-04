@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DefaultHeader from './Default'
+import DefaultHeader from './DefaultHeader'
 
 class Stack extends Component {
 	render() {

@@ -9,12 +9,12 @@ import Accounts from './Accounts'
 class App extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="container app">
 				<Router>
 					<div>
 						<Switch>
-							<Route exact path="/" component={DefaultHeader} />
-							{/* <Route path="/accounts" component={Stack} /> */}
+							<Route exact path="/" component={Stack} />
+							<Route path="/accounts" component={Accounts} />
 						</Switch>
 					</div>
 				</Router>
