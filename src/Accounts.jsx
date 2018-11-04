@@ -41,7 +41,6 @@ class Accounts extends Component {
 						<i className="fas fa-edit fa-3x is-dark" />
 						<p className="is-hidden-mobile">edit</p>
 					</button>
-
 					{/* Add Account button */}
 					<button className="add">
 						<a href="/NewAccount">
@@ -50,6 +49,7 @@ class Accounts extends Component {
 						</a>
 					</button>
 				</div>
+
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
 					<a href="/">
