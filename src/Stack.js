@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+import DefaultHeader from './Default'
 
 class Stack extends Component {
 	render() {
 		return (
 			<main>
+				<DefaultHeader />
 				<div class="columns container is-gapless is-1-mobile">
 					<div class="column ">
 						<div class="box">
 							<h2 className="title has-text-success">$42</h2>
-							<h2 className="subtitle">Surplus/Defecit this month</h2>
+							<h2 className="subtitle">Surplus/Deficit this month</h2>
 						</div>
 					</div>
 					<div class="column ">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Default from './Default'
+import DefaultHeader from './DefaultHeader'
 
 class Accounts extends Component {
 	render() {

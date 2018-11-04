@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment'
 
-class Default extends Component {
+class DefaultHeader extends Component {
 	render() {
 		return (
 			<section className="hero is-bold is-dark has-text-weight-semibold	">
@@ -18,11 +18,9 @@ class Default extends Component {
 						</div>
 					</div>
 				</nav>
-
-				{/* <Moment element="span" format="MMMM" /> */}
 			</section>
 		)
 	}
 }
 
-export default Default
+export default DefaultHeader
