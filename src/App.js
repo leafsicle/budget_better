@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import DefaultHeader from './DefaultHeader'
 import Stack from './Stack'
 import Accounts from './Accounts'
 
 class App extends Component {
 	render() {
 		return (
-			<div className="container app">
+			<div className="container">
 				<Router>
 					<div>
 						<Switch>

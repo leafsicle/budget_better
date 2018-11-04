@@ -7,7 +7,7 @@ class Stack extends Component {
 			<main>
 				<DefaultHeader />
 				<div class="columns container is-gapless is-1-mobile">
-					{/* Unpaid card with working link */}
+					{/* Overall card with working link */}
 					<div class="column">
 						<a href="./">
 							<div class="box">

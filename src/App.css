@@ -1,6 +1,9 @@
 .container {
   text-align: center;
 }
+/* .app{
+  max-width: 100%vw;
+} */
 .navbar{
   max-width: 100%vw;
 }
@@ -30,8 +33,7 @@ a:link, a:visited {
     color: inherit; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
   }
-a:hover{
-  background-color: grey;
-  color:red;
-}
 
+td {
+  border: 0;
+}
