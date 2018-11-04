@@ -3,7 +3,6 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import DefaultHeader from './DefaultHeader'
 import Stack from './Stack'
-import Test from './Test'
 import Accounts from './Accounts'
 
 class App extends Component {
@@ -19,9 +18,7 @@ class App extends Component {
 					</div>
 				</Router>
 
-				{/* <Test /> */}
 				{/* <Accounts /> */}
-				{/* <Stack/> */}
 			</div>
 		)
 	}
