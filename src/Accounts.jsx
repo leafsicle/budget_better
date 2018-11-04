@@ -47,31 +47,24 @@ class Accounts extends Component {
 						<p className="is-hidden-mobile">add account </p>
 					</button>
 				</div>
-
-				<table className="table is-fullwidth">
-					<tbody className="">
-						<tr className="">
-							<a href="/">
-								<td>Account Name</td>
-							</a>
-						</tr>
-						<tr className="">
-							<a href="/">
-								<td>Account Name</td>
-							</a>
-						</tr>
-						<tr className="">
-							<a href="/">
-								<td>Account Name</td>
-							</a>
-						</tr>
-						<tr className="">
-							<a href="/">
-								<td>Account Name</td>
-							</a>
-						</tr>
-					</tbody>
-				</table>
+				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
+				<div className="">
+					<a href="/">
+						<p className="is-centered box is-fullwidth">Power</p>
+					</a>
+					<a href="/">
+						<p className="is-centered box is-fullwidth">water</p>
+					</a>
+					<a href="/">
+						<p className="is-centered box is-fullwidth">rent</p>
+					</a>
+					<a href="/">
+						<p className="is-centered box is-fullwidth">internet</p>
+					</a>
+					<a href="/">
+						<p className="is-centered box is-fullwidth">mobile</p>
+					</a>
+				</div>
 			</div>
 		)
 	}

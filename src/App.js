@@ -13,6 +13,8 @@ class App extends Component {
 						<Switch>
 							<Route exact path="/" component={Stack} />
 							<Route path="/accounts" component={Accounts} />
+							{/* <Route path="/INSERT HERE" component={INSERT HERE} />
+							<Route path="/INSERT HERE" component={INSERT HERE} /> */}
 						</Switch>
 					</div>
 				</Router>
