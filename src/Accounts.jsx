@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PageHeader from './PageHeader.jsx'
+// import Account from './Account'
 
 class Accounts extends Component {
 	render() {
@@ -43,8 +44,10 @@ class Accounts extends Component {
 
 					{/* Add Account button */}
 					<button className="add">
-						<i className="fas fa-plus-square fa-3x" />
-						<p className="is-hidden-mobile">add account </p>
+						<a href="/NewAccount">
+							<i className="fas fa-plus-square fa-3x" />
+							<p className="is-hidden-mobile">add account </p>
+						</a>
 					</button>
 				</div>
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
