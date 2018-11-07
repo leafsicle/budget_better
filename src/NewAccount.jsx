@@ -15,11 +15,11 @@ class NewAccount extends Component {
 					<p class="help">This is below the box?</p>
 				</div>
 				<div class="field">
-					<label class="label">Label</label>
+					<label class="label">Amount Due</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Text input" />
+						<input class="input" type="integer" placeholder="Amount Due" />
 					</div>
-					<p class="help">This is a help text</p>
+					<p class="help">Use whole numbers</p>
 				</div>
 				<div class="field">
 					<label class="label">Label</label>
