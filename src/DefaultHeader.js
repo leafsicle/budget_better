@@ -10,12 +10,14 @@ class DefaultHeader extends Component {
 						<a className="active" aria-current="page" href="/">
 							<i className="fas fa-balance-scale fa-3x" />
 						</a>
-						<div className="hero-body title">
-							<h3>Better Budget</h3>
-							<span className="subtitle">
-								<Moment element="span" format="MMMM" />
-							</span>
-						</div>
+					</div>
+					<div className="navbar-start">
+						<div className="navbar-item title">Better Budget</div>
+						<span className="subtitle">
+							Today is
+							<Moment element="span" format="DDMMMMYY" />
+							<p> </p>
+						</span>
 					</div>
 				</nav>
 			</section>

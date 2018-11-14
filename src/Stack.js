@@ -43,8 +43,8 @@ class Stack extends Component {
 					<div className="column">
 						<a href="./">
 							<div className="box">
-								<h1 className="title has-text-warning ">Upcoming bills</h1>
-								<h2 className="subtitle">5 Bills unpaid</h2>
+								<h1 className="title has-text-warning ">Calendar!</h1>
+								<h2 className="subtitle">words!</h2>
 							</div>
 						</a>
 					</div>
