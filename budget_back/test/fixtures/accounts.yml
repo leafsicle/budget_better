@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  due_date: MyString
+  type: false
+  amount_due: 1
+  frequency: 1
+  paid: false
+  remaining: MyString
+  payment: 1
+  notes: 
+
+two:
+  name: MyString
+  due_date: MyString
+  type: false
+  amount_due: 1
+  frequency: 1
+  paid: false
+  remaining: MyString
+  payment: 1
+  notes: 
