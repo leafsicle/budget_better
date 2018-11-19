@@ -11,8 +11,8 @@ class Stack extends Component {
 					<div className="column">
 						<a href="./">
 							<div className="box">
-								<h1 className="title has-text-success">$42</h1>
-								<h2 className="subtitle">Surplus/Deficit this month</h2>
+								<h1 className="title has-text-success">Dynamic money!</h1>
+								{/* <h2 className="subtitle">Surplus/Deficit this month</h2> */}
 							</div>
 						</a>
 					</div>
@@ -22,9 +22,9 @@ class Stack extends Component {
 						<a href="./">
 							<div className="box">
 								<h1 className="title has-text-danger">
-									### Bills remaining this month
-								</h1>{' '}
-								<h2 className="subtitle">Upcoming bills</h2>
+									remaining payments to be made
+								</h1>
+								{/* <h2 className="subtitle">Upcoming bills</h2> */}
 							</div>
 						</a>
 					</div>
@@ -34,7 +34,7 @@ class Stack extends Component {
 						<a href="./Accounts">
 							<div className="box">
 								<h1 className="title has-text-info">Accounts</h1>
-								<h2 className="subtitle">you have 10 account active</h2>
+								{/* <h2 className="subtitle"></h2> */}
 							</div>
 						</a>
 					</div>
@@ -43,8 +43,10 @@ class Stack extends Component {
 					<div className="column">
 						<a href="./">
 							<div className="box">
-								<h1 className="title has-text-warning ">Calendar!</h1>
-								<h2 className="subtitle">words!</h2>
+								<h1 className="title has-text-warning ">
+									I will be a calendar
+								</h1>
+								{/* <h2 className="subtitle">words!</h2> */}
 							</div>
 						</a>
 					</div>

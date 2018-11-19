@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 class DefaultHeader extends Component {
 	render() {
 		return (
-			<section className="hero is-bold is-dark has-text-weight-semibold	">
+			<section className="hero is-bold is-light has-text-weight-semibold	">
 				<nav className="navbar" role="navigation" aria-label="main navigation">
 					<div className="navbar-brand ">
 						<a className="active" aria-current="page" href="/">
@@ -13,11 +13,10 @@ class DefaultHeader extends Component {
 					</div>
 					<div className="navbar-start">
 						<div className="navbar-item title">Better Budget</div>
-						<span className="subtitle">
-							Today is
-							<Moment element="span" format="DDMMMMYY" />
-							<p> </p>
-						</span>
+						<span className="subtitle">Today is </span>
+						<Moment element="span" format="DD" />
+						<span> </span>
+						<Moment element="span" format="MMMM" />
 					</div>
 				</nav>
 			</section>

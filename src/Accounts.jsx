@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
-import PageHeader from './PageHeader.jsx'
+// import PageHeader from './PageHeader.jsx'
 // import Account from './Account'
+import axios from 'axios'
 
 class Accounts extends Component {
+	state = {
+		data: {
+			data: {}
+		}
+	}
+
+	componentWillMount() {
+		axios
+			.get('http://localhost:3001/events.json')
+			.then(response => {
+				// console.log(response)
+				this.setState({ data: response.data })
+			})
+			.catch(error => console.log(error))
+	}
+
 	render() {
+		let account = this.state.data.data
 		return (
 			<div>
 				{/* This page will be a table of all accounts. Possibly in alphabetical order?*/}
@@ -36,11 +54,6 @@ class Accounts extends Component {
 
 				{/* Add and edit buttons are here */}
 				<div className="nav">
-					{/* Edit Account button */}
-					<button className="editor">
-						<i className="fas fa-edit fa-3x is-dark" />
-						<p className="is-hidden-mobile">edit</p>
-					</button>
 					{/* Add Account button */}
 					<button className="add">
 						<a href="/NewAccount">
@@ -52,20 +65,14 @@ class Accounts extends Component {
 
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					<a href="/">
-						<p className="is-centered box is-fullwidth">Power</p>
-					</a>
-					<a href="/">
-						<p className="is-centered box is-fullwidth">water</p>
-					</a>
-					<a href="/">
-						<p className="is-centered box is-fullwidth">rent</p>
-					</a>
-					<a href="/">
-						<p className="is-centered box is-fullwidth">internet</p>
-					</a>
-					<a href="/">
-						<p className="is-centered box is-fullwidth">mobile</p>
+					<a href="/Accounts">
+						<p className="is-centered box is-fullwidth">
+							{account.map(event => {
+								console.log(event)
+								return { event }
+							})}
+						</p>
+						<p />
 					</a>
 				</div>
 			</div>

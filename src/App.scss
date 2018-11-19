@@ -1,3 +1,9 @@
+// GLOBAL
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+} 
+
 .container {
   text-align: center;
 }
@@ -7,7 +13,7 @@
 }
 div.nav{
   display: flex;
-  justify-content: space-between
+  justify-content: flex-end;
 }
 div.column {
 display: flex;
@@ -20,6 +26,7 @@ justify-content: center;
 div.box{
   margin:15px 10px;
   width:300px;
+  min-height: 100px;
 }
 p.box{
   margin:5px;
@@ -29,10 +36,6 @@ p.box{
   background-color: inherit;
 }
 
-a:link, a:visited {
-    color: black;
-    text-decoration: none;
-  }
 .new-account{
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Stack from './Stack'
 import Accounts from './Accounts'
@@ -19,7 +19,6 @@ class App extends Component {
 						</Switch>
 					</div>
 				</Router>
-
 				{/* <Accounts /> */}
 			</div>
 		)
