@@ -1,27 +1,10 @@
 import React, { Component } from 'react'
 // import PageHeader from './PageHeader.jsx'
-// import Account from './Account'
-import axios from 'axios'
+import Account from './Account'
+// import axios from 'axios'
 
 class Accounts extends Component {
-	state = {
-		data: {
-			data: {}
-		}
-	}
-
-	componentWillMount() {
-		axios
-			.get('http://localhost:3001/events.json')
-			.then(response => {
-				// console.log(response)
-				this.setState({ data: response.data })
-			})
-			.catch(error => console.log(error))
-	}
-
 	render() {
-		let account = this.state.data.data
 		return (
 			<div>
 				{/* This page will be a table of all accounts. Possibly in alphabetical order?*/}
@@ -65,15 +48,7 @@ class Accounts extends Component {
 
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					<a href="/Accounts">
-						<p className="is-centered box is-fullwidth">
-							{account.map(event => {
-								console.log(event)
-								return { event }
-							})}
-						</p>
-						<p />
-					</a>
+					<Account />
 				</div>
 			</div>
 		)
