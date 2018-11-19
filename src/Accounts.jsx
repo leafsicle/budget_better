@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
-// import PageHeader from './PageHeader.jsx'
-import Account from './Account'
-// import axios from 'axios'
+// import Account from './Account'
+import axios from 'axios'
 
 class Accounts extends Component {
+	state = {
+		events: []
+	}
+
+	componentWillMount() {
+		axios
+			.get('http://localhost:3001/events.json')
+			.then(response => {
+				this.setState({ events: response.data })
+				console.log(response.data)
+			})
+			.catch(error => console.log(error))
+	}
 	render() {
 		return (
 			<div>
-				{/* This page will be a table of all accounts. Possibly in alphabetical order?*/}
+				{/* This page will be a table of all accounts.*/}
 				<section className="hero is-bold is-dark has-text-weight-semibold	">
 					<nav
 						className="navbar"
@@ -28,7 +40,6 @@ class Accounts extends Component {
 							</nav>
 						</section>
 						{/* implement the page header once you render it dynamically */}
-						{/* <PageHeader /> */}
 					</nav>
 				</section>
 
@@ -45,7 +56,17 @@ class Accounts extends Component {
 
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					<Account />
+					{/* <Account /> */}
+					<a href="/Account">
+						{this.state.events.map((event, index) => (
+							<p key={index} className="is-centered box is-fullwidth-mobile">
+								{event.name}${event.amount_due}
+								this is a(n) {event.flow}
+								{event.id}
+								{event.notes}
+							</p>
+						))}
+					</a>
 				</div>
 			</div>
 		)

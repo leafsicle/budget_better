@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import PageHeader from './PageHeader'
 
 class NewAccount extends Component {
 	render() {
 		return (
 			<div className="container">
-				<PageHeader />
 				<div className="container new-account">
 					{/* This is where you will add a new account!! */}
 					<div class="field">
