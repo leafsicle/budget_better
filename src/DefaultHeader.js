@@ -6,11 +6,6 @@ class DefaultHeader extends Component {
 		return (
 			<section className="hero is-bold is-light has-text-weight-semibold	">
 				<nav className="navbar" role="navigation" aria-label="main navigation">
-					<div className="navbar-brand ">
-						<a className="active" aria-current="page" href="/">
-							<i className="fas fa-balance-scale fa-3x" />
-						</a>
-					</div>
 					<div className="navbar-start">
 						<div className="navbar-item title">Better Budget</div>
 						<span className="subtitle">Today is </span>
