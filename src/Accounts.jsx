@@ -5,17 +5,34 @@ import DefaultHeader from './DefaultHeader'
 
 class Accounts extends Component {
 	state = {
-		events: []
+		events: [],
+		totalBudget: 0
 	}
 
 	componentWillMount() {
 		axios
 			.get('http://localhost:3001/events.json')
 			.then(response => {
-				this.setState({ events: response.data })
+				this.setState({ events: response.data }, () => {
+					this.updateTotals()
+				})
 				// console.log(response.data)
 			})
 			.catch(error => console.log(error))
+	}
+
+	updateTotals() {
+		let total = 0
+		this.state.events.forEach(event => {
+			if (event.flow === 'expense') {
+				total -= event.amount_due
+			} else {
+				total += event.amount_due
+			}
+		})
+		this.setState({
+			totalBudget: total
+		})
 	}
 
 	render() {

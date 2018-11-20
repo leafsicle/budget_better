@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import DefaultHeader from './DefaultHeader'
 
 class NewAccount extends Component {
 	render() {
@@ -20,23 +21,12 @@ class NewAccount extends Component {
 
 		return (
 			<div className="container">
-				<div className="container new-account">
+				<div className="container">
 					{/* This is where you will add a new account!! */}
 					{/* This is the name of the account to be sent to the backend */}
-					<div className="field">
-						<div className="control">
-							<label className="label">Account Name</label>
-							<input
-								className="input"
-								type="text"
-								placeholder="What should we call this account?"
-							/>
-						</div>
-						<p className="help" /> {/* this appears below */}
-					</div>
-
+					<DefaultHeader title="New Account" />
 					{/* when is the account due?*/}
-					<div className="field">
+					<div className="field new-account">
 						<div className="control">
 							<label className="label">When is this bill due?</label>
 							<input className="input" type="date" required placeholder="" />

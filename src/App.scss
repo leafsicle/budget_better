@@ -6,30 +6,26 @@ a:link, a:visited {
 .container {
   text-align: center;
 }
-// div.nav{
-//   display: flex;
-//   justify-content: flex-end;
-// }
-// div.column {
-// display: flex;
-// justify-content: center;
-// }
+div.nav{
+  display: flex;
+  justify-content: flex-end;
+}
+div.column {
+display: flex;
+justify-content: center;
+}
 
-// div.box{
-//   margin:15px 10px;
-//   min-width:300px;
-//   min-height: 0px;
-// }
-// p.box{
-//   margin:5px;
-// }
-// .add{
-//   border:none;
-//   background-color: inherit;
-// }
+div.box{
+  min-width:300px;
+  min-height: 0px;
+}
 
-// .new-account{
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 400px;
-// }
+.add{
+  border:none;
+}
+
+.new-account{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
