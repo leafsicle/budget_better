@@ -19,24 +19,25 @@ class Account extends Component {
 	render() {
 		let deleteaccount = () => {
 			alert('Are you sure?')
-			axios.delete('http://localhost:3001/events/:id', {
-				data: {
-					name: 'testing bacon bits',
-					due_date: '',
-					recurring: {},
-					amount_due: 3,
-					flow: 'expense',
-					was_paid: false,
-					notes: ''
-				}
-			})
+			// 		axios.delete('http://localhost:3001/events/:id', {
+			// 			data: {
+			// 				name: 'testing bacon bits',
+			// 				due_date: '',
+			// 				recurring: {},
+			// 				amount_due: 3,
+			// 				flow: 'expense',
+			// 				was_paid: false,
+			// 				notes: ''
 		}
+		// 		})
+
 		return (
 			<div>
-				<DefaultHeader />
 				{/* Stats and presentation about each account will be here! */}
-				this is an account?!
-				<button onClick={deleteaccount}> X</button>
+				<p>
+					I am a {this.props.name}
+					<button onClick={deleteaccount}> X</button>
+				</p>
 			</div>
 		)
 	}

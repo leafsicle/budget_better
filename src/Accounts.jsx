@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-// import Account from './Account'
+import Account from './Account'
 import axios from 'axios'
+import DefaultHeader from './DefaultHeader'
 
 class Accounts extends Component {
 	state = {
@@ -20,8 +21,10 @@ class Accounts extends Component {
 	render() {
 		return (
 			<div>
+				<DefaultHeader title="Accounts" />
+
 				{/* This page will be a table of all accounts.*/}
-				<section className="hero is-bold is-dark has-text-weight-semibold	">
+				{/* <section className="hero is-bold is-dark has-text-weight-semibold	">
 					<nav
 						className="navbar"
 						role="navigation"
@@ -40,25 +43,18 @@ class Accounts extends Component {
 								</div>
 							</nav>
 						</section>
-						{/* implement the page header once you render it dynamically */}
+						implement the page header once you render it dynamically
 					</nav>
-				</section>
+				</section> */}
 
 				{/* Add and edit buttons are here */}
-				<div className="nav">
-					{/* Add Account button */}
-					<button className="add">
-						<a href="/NewAccount">
-							<i className="fas fa-plus-square fa-3x" />
-							<p className="is-hidden-mobile">add account </p>
-						</a>
-					</button>
-				</div>
 
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					{/* <Account /> */}
-					<a href="/Account/{event.id}">
+					<Account name="test" />
+					<Account name="not a test" />
+					<Account name="power" />
+					{/* <a href="/Account/{event.id}">
 						{this.state.events.map((event, index) => (
 							<p key={index} className="is-centered box is-fullwidth-mobile">
 								{event.name}${event.amount_due}
@@ -67,7 +63,7 @@ class Accounts extends Component {
 								{event.notes}
 							</p>
 						))}
-					</a>
+					</a> */}
 				</div>
 			</div>
 		)

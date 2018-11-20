@@ -8,12 +8,20 @@ class DefaultHeader extends Component {
 				<nav className="navbar" role="navigation" aria-label="main navigation">
 					<div className="navbar-start">
 						<div className="navbar-item title">
-							<a href="/">Better Budget </a>
+							<a href="/">{this.props.title} </a>
 						</div>
 						<span className="subtitle">Today is </span>
 						<Moment element="span" format="DD" />
-						<span> </span>
 						<Moment element="span" format="MMMM" />
+					</div>
+					<div className="nav">
+						{/* Add Account button */}
+						<button className="add">
+							<a href="/NewAccount">
+								<i className="fas fa-plus-square fa-3x" />
+								<p className="is-hidden-mobile">add account </p>
+							</a>
+						</button>
 					</div>
 				</nav>
 			</section>
