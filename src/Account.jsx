@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import DefaultHeader from './DefaultHeader'
 
 class Account extends Component {
 	// state = {
@@ -17,6 +18,7 @@ class Account extends Component {
 
 	render() {
 		let deleteaccount = () => {
+			alert('Are you sure?')
 			axios.delete('http://localhost:3001/events/:id', {
 				data: {
 					name: 'testing bacon bits',
@@ -31,8 +33,8 @@ class Account extends Component {
 		}
 		return (
 			<div>
-				{/* Stats and presentation about each account will be here! reference
-        Octocats */}
+				<DefaultHeader />
+				{/* Stats and presentation about each account will be here! */}
 				this is an account?!
 				<button onClick={deleteaccount}> X</button>
 			</div>

@@ -42,6 +42,7 @@ class NewAccount extends Component {
 							<input className="input" type="date" required placeholder="" />
 						</div>
 					</div>
+
 					{/* This is for how often the bill occurs*/}
 					<div className="field ">
 						<div className="control">
@@ -56,6 +57,7 @@ class NewAccount extends Component {
 							</select>
 						</div>
 					</div>
+
 					{/* Was this bill paid or not paid? */}
 					<div className="field">
 						<div className="control">
@@ -78,6 +80,7 @@ class NewAccount extends Component {
 						</div>
 					</div>
 
+					{/* Notes for the account */}
 					<div className="field">
 						<div className="control">
 							<label className="label">Notes:</label>
@@ -89,6 +92,8 @@ class NewAccount extends Component {
 							<span className="validity" />
 						</div>
 					</div>
+
+					{/* submit button to post to DB */}
 					<input
 						className="box"
 						onClick={handleClick}

@@ -58,7 +58,7 @@ class Accounts extends Component {
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
 					{/* <Account /> */}
-					<a href="/Account">
+					<a href="/Account/{event.id}">
 						{this.state.events.map((event, index) => (
 							<p key={index} className="is-centered box is-fullwidth-mobile">
 								{event.name}${event.amount_due}
