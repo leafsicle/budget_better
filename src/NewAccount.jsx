@@ -1,73 +1,100 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class NewAccount extends Component {
 	render() {
+		let handleClick = () => {
+			axios.post('http://localhost:3001/events.json', {
+				url: 'http://localhost:3001/events.json',
+				data: {
+					name: 'testing bacon bits',
+					due_date: '',
+					recurring: {},
+					amount_due: 3,
+					flow: 'expense',
+					was_paid: false,
+					notes: ''
+				}
+			})
+		}
+
 		return (
 			<div className="container">
 				<div className="container new-account">
 					{/* This is where you will add a new account!! */}
-					<div class="field">
-						<label class="label">Account Name</label>
-						<div class="control">
+					{/* This is the name of the account to be sent to the backend */}
+					<div className="field">
+						<div className="control">
+							<label className="label">Account Name</label>
 							<input
-								class="input"
+								className="input"
 								type="text"
 								placeholder="What should we call this account?"
 							/>
 						</div>
-						<p class="help" /> {/* this appears below */}
+						<p className="help" /> {/* this appears below */}
 					</div>
-					<div class="field">
-						<label class="label">Amount Due</label>
-						<div class="control">
+
+					{/* when is the account due?*/}
+					<div className="field">
+						<div className="control">
+							<label className="label">When is this bill due?</label>
+							<input className="input" type="date" required placeholder="" />
+						</div>
+					</div>
+					{/* This is for how often the bill occurs*/}
+					<div className="field ">
+						<div className="control">
+							<label className="label">Frequency</label>
+							<select id="frequency">
+								<option value="">How often does this occur?</option>
+								<option value="daily">Daily</option>
+								<option value="weekly">Weekly</option>
+								<option value="bi-weekly">Bi-weekly</option>
+								<option value="monthly">Monthly</option>
+								<option value="annual">Annually</option>
+							</select>
+						</div>
+					</div>
+					{/* Was this bill paid or not paid? */}
+					<div className="field">
+						<div className="control">
+							<label className="label">Was this bill paid?</label>
+							<input className="w3-check" type="checkbox" />
+						</div>
+					</div>
+
+					{/* How much is this bill? */}
+					<div className="field">
+						<div className="control">
+							<label className="label">Amount Due</label>
 							<input
-								class="input"
+								className="input"
 								type="number"
 								min="0"
 								max="100"
 								placeholder="Amount in $"
 							/>
 						</div>
-						<p class="help" /> {/* this appears below */}
 					</div>
 
-					<div class="field">
-						<label class="label">When is this bill due?</label>
-						<div class="control">
-							<input class="input" type="date" required placeholder="" />
+					<div className="field">
+						<div className="control">
+							<label className="label">Notes:</label>
+							<input
+								className="input"
+								type="text"
+								placeholder="account number etc..."
+							/>
+							<span className="validity" />
 						</div>
-						<p class="help" /> {/* this appears below */}
 					</div>
-					<div class="field container">
-						<label class="label">Frequency</label>
-						<div class="control">
-							<select id="frequency">
-								<option value="">How often does this occur?</option>
-								<option value="dog">Daily</option>
-								<option value="cat">Weekly</option>
-								<option value="hamster">Bi-weekly</option>
-								<option value="parrot">Monthly</option>
-								<option value="spider">Quarterly</option>
-								<option value="goldfish">Annually</option>
-							</select>
-						</div>
-						<p class="help" /> {/* this appears below */}
-					</div>
-
-					<div class="username">
-						<label for="uname">Notes:</label>
-						<input
-							type="text"
-							id="notes"
-							name="uname"
-							required
-							minlength="0"
-							maxlength="32"
-							placeholder="account number etc..."
-						/>
-						<span class="validity" />
-					</div>
-					<input className="" type="submit" value="Submit" />
+					<input
+						className="box"
+						onClick={handleClick}
+						type="submit"
+						value="Submit"
+					/>
 				</div>
 			</div>
 		)

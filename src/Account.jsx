@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 class Account extends Component {
 	// state = {
@@ -16,11 +16,25 @@ class Account extends Component {
 	// }
 
 	render() {
+		let deleteaccount = () => {
+			axios.delete('http://localhost:3001/events/:id', {
+				data: {
+					name: 'testing bacon bits',
+					due_date: '',
+					recurring: {},
+					amount_due: 3,
+					flow: 'expense',
+					was_paid: false,
+					notes: ''
+				}
+			})
+		}
 		return (
 			<div>
 				{/* Stats and presentation about each account will be here! reference
         Octocats */}
-				this is an account
+				this is an account?!
+				<button onClick={deleteaccount}> X</button>
 			</div>
 		)
 	}

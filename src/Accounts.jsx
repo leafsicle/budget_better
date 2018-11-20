@@ -12,10 +12,11 @@ class Accounts extends Component {
 			.get('http://localhost:3001/events.json')
 			.then(response => {
 				this.setState({ events: response.data })
-				console.log(response.data)
+				// console.log(response.data)
 			})
 			.catch(error => console.log(error))
 	}
+
 	render() {
 		return (
 			<div>

@@ -7,8 +7,8 @@ class DefaultHeader extends Component {
 			<section className="hero is-bold is-light has-text-weight-semibold is	">
 				<nav className="navbar" role="navigation" aria-label="main navigation">
 					<div className="navbar-start">
-						<div href="/.." className="navbar-item title">
-							Better Budget
+						<div className="navbar-item title">
+							<a href="/">Better Budget </a>
 						</div>
 						<span className="subtitle">Today is </span>
 						<Moment element="span" format="DD" />
