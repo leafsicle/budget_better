@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DefaultHeader from './DefaultHeader'
 import Card from './Card'
+
 class Stack extends Component {
 	render() {
 		return (

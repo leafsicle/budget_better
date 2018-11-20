@@ -6,7 +6,7 @@ class Card extends Component {
 			<div>
 				<div className="column">
 					<a href={this.props.urlLink}>
-						<div className="box is-fullwidth-mobile is-one-quarter-desktop">
+						<div className="box is-fullwidth">
 							<h1 className="title">{this.props.cardName}</h1>
 						</div>
 					</a>
