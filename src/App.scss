@@ -10,22 +10,22 @@ div.nav{
   display: flex;
   justify-content: flex-end;
 }
-div.column {
+div.columns .column {
 display: flex;
 justify-content: center;
 }
 
 div.box{
-  min-width:300px;
+  min-width:200px;
   min-height: 0px;
 }
 
-.add{
-  border:none;
-}
+// .add{
+//   border:none;
+// }
 
-.new-account{
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-}
+// .new-account{
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 400px;
+// }

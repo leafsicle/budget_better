@@ -7,7 +7,7 @@ class Stack extends Component {
 			<main className="container">
 				<DefaultHeader title="Better Budget" />
 
-				<div className="columns container">
+				<div className="columns">
 					{/* Overall card with working link */}
 					<Card cardName={`The total is ${this.props.totalBudget}`} />
 
@@ -15,7 +15,7 @@ class Stack extends Component {
 					<Card cardName="remaining payments to be made" />
 
 					{/* Accounts card with working link */}
-					<Card cardName="Accounts" />
+					<Card cardName="Accounts" urlLink="/accounts" />
 
 					{/* Upcoming bills. Needs redirect */}
 					<Card cardName="I will be a calendar" />

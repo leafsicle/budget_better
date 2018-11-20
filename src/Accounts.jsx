@@ -5,8 +5,7 @@ import DefaultHeader from './DefaultHeader'
 
 class Accounts extends Component {
 	state = {
-		events: [],
-		totalBudget: 0
+		events: []
 	}
 
 	componentWillMount() {

@@ -14,7 +14,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Stack} />
 						<Route path="/accounts" component={Accounts} />
-						<Route path="/account/:id" component={Account} />
+						<Route path="/account" component={Account} />
 						<Route path="/NewAccount" component={NewAccount} />
 					</Switch>
 				</Router>
