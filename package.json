@@ -11,6 +11,7 @@
     "moment": "^2.22.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.0",
+    "react-big-calendar-like-google": "0.0.3",
     "react-dom": "^16.6.0",
     "react-moment": "^0.8.3",
     "react-router-dom": "^4.3.1",

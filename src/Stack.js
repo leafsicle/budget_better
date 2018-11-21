@@ -49,7 +49,7 @@ class Stack extends Component {
 					<Card cardName="Accounts" urlLink="/accounts" />
 
 					{/* Upcoming bills. Needs redirect */}
-					<Card cardName="I will be a calendar" />
+					<Card cardName="I will be a calendar" urlLink="/Calendar" />
 				</div>
 			</main>
 		)

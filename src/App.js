@@ -5,6 +5,7 @@ import Stack from './Stack'
 import Accounts from './Accounts'
 import Account from './Account'
 import NewAccount from './NewAccount'
+import Calendar from './Calendar'
 
 class App extends Component {
 	render() {
@@ -16,6 +17,7 @@ class App extends Component {
 						<Route path="/accounts" component={Accounts} />
 						<Route path="/account" component={Account} />
 						<Route path="/NewAccount" component={NewAccount} />
+						<Route path="/Calendar" component={Calendar} />
 					</Switch>
 				</Router>
 			</div>
