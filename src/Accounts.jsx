@@ -34,15 +34,13 @@ class Accounts extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="">
 				<DefaultHeader title="Accounts" />
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
-				<div className="">
+				<div className="is-outlined">
 					<a href="/Account/">
 						{this.state.events.map((event, index) => (
-							<div className="box container is-one-quarter column">
-								<Account key={index} name={event.name} />
-							</div>
+							<Account key={index} name={event.name} />
 						))}
 					</a>
 				</div>

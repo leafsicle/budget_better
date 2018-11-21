@@ -4,9 +4,9 @@ class Card extends Component {
 	render() {
 		return (
 			<div>
-				<div className="column">
+				<div className="">
 					<a href={this.props.urlLink}>
-						<div className="box is-fullwidth">
+						<div className="box">
 							<h1 className="title">{this.props.cardName}</h1>
 						</div>
 					</a>

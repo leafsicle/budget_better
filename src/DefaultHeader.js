@@ -13,8 +13,8 @@ class DefaultHeader extends Component {
 
 					{/* This holds the date in the middle container of the header */}
 					<div className="navbar-item">
-						<Moment element="span" format="MMMM" />
-						<Moment element="span" format="DD" />
+						{/* <Moment element="span" format="MMMM" />
+						<Moment element="span" format="DD" /> */}
 					</div>
 
 					<div className="navbar-end has-text-right-mobile">

@@ -35,10 +35,10 @@ class Stack extends Component {
 
 	render() {
 		return (
-			<main className="container">
+			<main className="">
 				<DefaultHeader title="Better Budget" />
 
-				<div className="columns">
+				<div className="container">
 					{/* Overall card with working link */}
 					<Card cardName={`The total is ${this.props.totalBudget}`} />
 
