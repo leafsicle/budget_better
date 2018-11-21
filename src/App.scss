@@ -10,6 +10,11 @@ div.nav{
   display: flex;
   justify-content: flex-end;
 }
+nav.navbar div{
+  display: flex;
+  align-items: center;
+}
+
 div.columns .column {
 display: flex;
 justify-content: center;
