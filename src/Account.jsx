@@ -21,7 +21,7 @@ class Account extends Component {
 			alert('Are you sure?')
 			axios.delete('http://localhost:3001/events/:id', {
 				data: {
-					name: 'testing bacon bits',
+					name: '',
 					due_date: '',
 					recurring: {},
 					amount_due: 3,

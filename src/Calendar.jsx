@@ -11,11 +11,11 @@ class Calendar extends Component {
 				BigCalendar.momentLocalizer(moment); {/* or globalizeLocalizer const */}
 				MyCalendar = props => (
 				<div>
-					<BigCalendar
+					{/* <BigCalendar
 						events={myEventsList}
 						startAccessor="startDate"
 						endAccessor="endDate"
-					/>
+					/> */}
 				</div>
 				);
 			</div>
