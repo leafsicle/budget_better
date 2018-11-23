@@ -11,10 +11,14 @@ class DefaultHeader extends Component {
 				</div>
 
 				<div className="level-item headerR ">
-					{/* Add Account button */}
 					<a href="/NewAccount">
-						<i className="fas fa-plus-square fa-2x" />
-						<p className="is-hidden-mobile">add account</p>
+						<p className="is-hidden-touch">
+							add account
+							<i className="fas fa-plus-square fa-2x " />
+						</p>
+					</a>
+					<a href="/NewAccount">
+						<i className="fas fa-plus-square fa-2x is-hidden-widescreen" />
 					</a>
 				</div>
 			</header>

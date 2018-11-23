@@ -16,20 +16,6 @@ class Account extends Component {
 	}
 
 	render() {
-		// 	let deleteAccount = () => {
-		// 		alert('Are you sure?')
-		// 		axios.delete('http://localhost:3001/events/:id', {
-		// 			data: {
-		// 				name: '',
-		// 				due_date: '',
-		// 				recurring: {},
-		// 				amount_due: 3,
-		// 				flow: 'expense',
-		// 				was_paid: false,
-		// 				notes: ''
-		// 			}
-		// 		})
-
 		// name={event.name}
 		// dueDate={event.due_date}
 		// frequency={event.recurring}
@@ -38,13 +24,28 @@ class Account extends Component {
 		// paid={event.was_paid}
 
 		return (
-			<div className="">
+			<div className={this.props.className}>
 				{/* Stats and presentation about each account will be here! */}
-				<h2>Account name: {this.props.name}</h2>
-				<p>Due: {this.props.dueDate}</p>
-				<p>Type: {this.props.flow}</p>
-				<p>Notes: {this.props.notes}</p>
-				<p>this has been </p>
+
+				<h2>
+					<strong>Account name:</strong>
+					{this.props.name}
+				</h2>
+				<p>
+					<strong>Amount due: </strong>${this.props.amount}
+				</p>
+				<p>
+					<strong>Due date: </strong>
+					{this.props.dueDate}
+				</p>
+				<p>
+					<strong>Type: </strong>
+					{this.props.flow}
+				</p>
+				<p>
+					<strong>Notes: </strong>
+					{this.props.notes}
+				</p>
 			</div>
 		)
 	}

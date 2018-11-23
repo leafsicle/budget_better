@@ -35,23 +35,24 @@ class Stack extends Component {
 	render() {
 		return (
 			<main className="">
-				<DefaultHeader title="Better Budget" />
+				<DefaultHeader title="Ch-ching" />
 
 				<div className="container card-container">
 					{/* Overall card with working link */}
 					<Card
 						className="title"
-						cardName={`The current total is $${this.state.totalBudget}`}
+						cardName="The current total is"
+						cardValue={`$${this.state.totalBudget}`}
 					/>
 
 					{/* These will be the unpaid accounts possibly */}
 					{/* <Card cardName="remaining payments to be made" /> */}
 
 					{/* Accounts card with working link */}
-					<Card className="subtitle" cardName="Accounts" urlLink="/accounts" />
+					<Card className="title" cardName="Accounts" urlLink="/accounts" />
 
 					{/* Upcoming bills. Needs redirect */}
-					<Card cardName="I will be a calendar" urlLink="/calendar" />
+					<Card className="title" cardName="Calendar" urlLink="/calendar" />
 				</div>
 			</main>
 		)

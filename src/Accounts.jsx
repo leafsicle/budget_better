@@ -18,29 +18,16 @@ class Accounts extends Component {
 			.catch(error => console.log(error))
 	}
 
-	// updateTotals() {
-	// 	let total = 0
-	// 	this.state.events.forEach(event => {
-	// 		if (event.flow === 'expense') {
-	// 			total -= event.amount_due
-	// 		} else {
-	// 			total += event.amount_due
-	// 		}
-	// 	})
-	// 	this.setState({
-	// 		totalBudget: total
-	// 	})
-	// }
-
 	render() {
 		return (
 			<div className="">
 				<DefaultHeader title="Accounts" />
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					<a href="/account">
+					<a href="/accountPage">
 						{this.state.events.map((event, index) => (
 							<Account
+								className="box"
 								key={index}
 								name={event.name}
 								dueDate={event.due_date}
