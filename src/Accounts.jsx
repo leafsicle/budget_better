@@ -37,14 +37,18 @@ class Accounts extends Component {
 			<div className="">
 				<DefaultHeader title="Accounts" />
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
-				<div className="is-outlined">
-					<a href="/Account/">
+				<div className="">
+					<a href="/account">
 						{this.state.events.map((event, index) => (
 							<Account
 								key={index}
 								name={event.name}
+								dueDate={event.due_date}
+								frequency={event.recurring}
 								amount={event.amount_due}
 								flow={event.flow}
+								paid={event.was_paid}
+								notes={event.notes}
 							/>
 						))}
 					</a>

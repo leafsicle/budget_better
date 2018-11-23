@@ -3,21 +3,21 @@ import './App.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Stack from './Stack'
 import Accounts from './Accounts'
-import Account from './Account'
+import AccountPage from './AccountPage'
 import NewAccount from './NewAccount'
 import Calendar from './Calendar'
 
 class App extends Component {
 	render() {
 		return (
-			<div className="container">
+			<div className="">
 				<Router>
 					<Switch>
 						<Route exact path="/" component={Stack} />
 						<Route path="/accounts" component={Accounts} />
-						<Route path="/account" component={Account} />
-						<Route path="/NewAccount" component={NewAccount} />
-						<Route path="/Calendar" component={Calendar} />
+						<Route path="account" component={AccountPage} />
+						<Route path="/newaccount" component={NewAccount} />
+						<Route path="/calendar" component={Calendar} />
 					</Switch>
 				</Router>
 			</div>

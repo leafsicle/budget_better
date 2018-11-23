@@ -4,26 +4,20 @@ import React, { Component } from 'react'
 class DefaultHeader extends Component {
 	render() {
 		return (
-			<section className="container is-bold level is-light">
+			<header className="container flex is-bold level is-mobile">
 				{/* this is for the name of the page that the user is currently on */}
-				<div className="level-item title">
+				<div className="headerL level-item">
 					<a href="/">{this.props.title} </a>
 				</div>
 
-				{/* This holds the date in the middle container of the header */}
-				<div className="level-item">
-					{/* <Moment element="span" format="MMMM" />
-						<Moment element="span" format="DD" /> */}
-				</div>
-
-				<div className="navbar-end level-item has-text-right-mobile">
+				<div className="level-item headerR ">
 					{/* Add Account button */}
 					<a href="/NewAccount">
 						<i className="fas fa-plus-square fa-2x" />
 						<p className="is-hidden-mobile">add account</p>
 					</a>
 				</div>
-			</section>
+			</header>
 		)
 	}
 }

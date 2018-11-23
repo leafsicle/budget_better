@@ -5,8 +5,7 @@ import axios from 'axios'
 
 class Stack extends Component {
 	state = {
-		events: [],
-		totalbudget: {}
+		events: []
 	}
 
 	componentWillMount() {
@@ -29,8 +28,6 @@ class Stack extends Component {
 				total += event.amount_due
 			}
 		})
-		console.log(`the total is ${total}`)
-
 		this.setState({
 			totalBudget: total
 		})
@@ -40,18 +37,21 @@ class Stack extends Component {
 			<main className="">
 				<DefaultHeader title="Better Budget" />
 
-				<div className="container">
+				<div className="container card-container">
 					{/* Overall card with working link */}
-					<Card cardName={`The total is $${this.props.totalBudget}`} />
+					<Card
+						className="title"
+						cardName={`The current total is $${this.state.totalBudget}`}
+					/>
 
 					{/* These will be the unpaid accounts possibly */}
 					{/* <Card cardName="remaining payments to be made" /> */}
 
 					{/* Accounts card with working link */}
-					<Card cardName="Accounts" urlLink="/accounts" />
+					<Card className="subtitle" cardName="Accounts" urlLink="/accounts" />
 
 					{/* Upcoming bills. Needs redirect */}
-					<Card cardName="I will be a calendar" urlLink="/Calendar" />
+					<Card cardName="I will be a calendar" urlLink="/calendar" />
 				</div>
 			</main>
 		)

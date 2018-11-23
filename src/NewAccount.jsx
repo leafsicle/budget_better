@@ -91,7 +91,7 @@ class NewAccount extends Component {
 
 					{/* submit button to post to DB */}
 					<input
-						className="box is-primary"
+						className=""
 						onClick={handleClick}
 						type="submit"
 						value="Submit"
