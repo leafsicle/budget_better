@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Moment from 'react-moment'
+// import Moment from 'react-moment'
 
 class DefaultHeader extends Component {
 	render() {

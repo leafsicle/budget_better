@@ -8,10 +8,10 @@ class NewAccount extends Component {
 			axios.post('http://localhost:3001/events.json', {
 				url: 'http://localhost:3001/events.json',
 				data: {
-					name: 'testing bacon bits',
+					name: '',
 					due_date: '',
 					recurring: {},
-					amount_due: 3,
+					amount_due: 123,
 					flow: 'expense',
 					was_paid: false,
 					notes: ''
@@ -23,13 +23,19 @@ class NewAccount extends Component {
 			<div className="container">
 				<div className="container">
 					{/* This is where you will add a new account!! */}
-					{/* This is the name of the account to be sent to the backend */}
+					{/* This is the name of the account to be sent to the back end */}
 					<DefaultHeader title="New Account" />
 					{/* when is the account due?*/}
 					<div className="field new-account">
 						<div className="control">
 							<label className="label">When is this bill due?</label>
-							<input className="input" type="date" required placeholder="" />
+							<input
+								className="input"
+								type="date"
+								value={this.props.due_date}
+								required
+								placeholder=""
+							/>
 						</div>
 					</div>
 
@@ -64,7 +70,7 @@ class NewAccount extends Component {
 								className="input"
 								type="number"
 								min="0"
-								max="100"
+								max="10000"
 								placeholder="Amount in $"
 							/>
 						</div>

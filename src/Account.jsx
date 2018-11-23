@@ -34,10 +34,10 @@ class Account extends Component {
 
 		return (
 			<div className="card-content is-outlined">
+				<DefaultHeader />
 				<div className="">
 					{/* Stats and presentation about each account will be here! */}
 					{this.props.name}
-					<button onClick={deleteAccount}>X</button>
 				</div>
 			</div>
 		)

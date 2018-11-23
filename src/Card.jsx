@@ -7,6 +7,7 @@ class Card extends Component {
 				<div className="">
 					<a href={this.props.urlLink}>
 						<div className="box">
+							{/* The className title below indicates a class and not a value. just to remind myself */}
 							<h1 className="title">{this.props.cardName}</h1>
 						</div>
 					</a>

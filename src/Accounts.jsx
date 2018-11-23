@@ -40,7 +40,12 @@ class Accounts extends Component {
 				<div className="is-outlined">
 					<a href="/Account/">
 						{this.state.events.map((event, index) => (
-							<Account key={index} name={event.name} />
+							<Account
+								key={index}
+								name={event.name}
+								amount={event.amount_due}
+								flow={event.flow}
+							/>
 						))}
 					</a>
 				</div>
