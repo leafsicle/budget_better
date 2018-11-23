@@ -5,6 +5,12 @@
   background-color: #f5f5f5;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
 a:link,
 a:visited {
   color: black;
@@ -27,6 +33,8 @@ header {
 
   .headerR {
     color: #000;
+    display: flex;
+    align-content: center;
   }
 }
 
@@ -47,5 +55,17 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 15px;
   }
+}
+// *********************************
+// Accounts modifiers
+// *********************************
+// div a .box {
+//   display: flex;
+//   font-size: 2rem
+//   justify-content: center;
+// }
+.has-text-centered .button {
+  margin: 5px;
 }

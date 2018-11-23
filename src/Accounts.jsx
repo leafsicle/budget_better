@@ -24,10 +24,10 @@ class Accounts extends Component {
 				<DefaultHeader title="Accounts" />
 				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
 				<div className="">
-					<a href="/accountPage">
+					<a href="/accountPage" className="">
 						{this.state.events.map((event, index) => (
 							<Account
-								className="box"
+								className=""
 								key={index}
 								name={event.name}
 								dueDate={event.due_date}

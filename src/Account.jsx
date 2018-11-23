@@ -28,10 +28,10 @@ class Account extends Component {
 				{/* Stats and presentation about each account will be here! */}
 
 				<h2>
-					<strong>Account name:</strong>
+					{/* <strong>Account name:</strong> */}
 					{this.props.name}
 				</h2>
-				<p>
+				{/* <p>
 					<strong>Amount due: </strong>${this.props.amount}
 				</p>
 				<p>
@@ -45,7 +45,7 @@ class Account extends Component {
 				<p>
 					<strong>Notes: </strong>
 					{this.props.notes}
-				</p>
+				</p> */}
 			</div>
 		)
 	}

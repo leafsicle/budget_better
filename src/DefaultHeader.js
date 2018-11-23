@@ -4,21 +4,21 @@ import React, { Component } from 'react'
 class DefaultHeader extends Component {
 	render() {
 		return (
-			<header className="container flex is-bold level is-mobile">
+			<header className="container is-success is-bold level is-mobile">
 				{/* this is for the name of the page that the user is currently on */}
 				<div className="headerL level-item">
 					<a href="/">{this.props.title} </a>
 				</div>
 
-				<div className="level-item headerR ">
-					<a href="/NewAccount">
-						<p className="is-hidden-touch">
-							add account
-							<i className="fas fa-plus-square fa-2x " />
-						</p>
+				<div className="level-item-2 headerR ">
+					<a href="/NewAccount" className="button is-hidden-touch">
+						<p>add account</p>
 					</a>
+				</div>
+
+				<div className="level-item-2 headerR ">
 					<a href="/NewAccount">
-						<i className="fas fa-plus-square fa-2x is-hidden-widescreen" />
+						<i className="fas fa-plus-square fa-2x is-hidden-desktop" />
 					</a>
 				</div>
 			</header>
