@@ -35,7 +35,7 @@ class Stack extends Component {
 	render() {
 		return (
 			<main className="">
-				<DefaultHeader title="Ch-ching" />
+				<DefaultHeader title="Budget Better" />
 
 				<div className="container card-container">
 					{/* Overall card with working link */}

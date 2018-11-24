@@ -7,6 +7,7 @@
     "bootstrap": "3",
     "bulma": "^0.7.2",
     "bulma-start": "^0.0.2",
+    "configurable-react-recurring-select": "^1.0.33",
     "date-fns": "^1.29.0",
     "moment": "^2.22.2",
     "node-sass": "^4.10.0",
