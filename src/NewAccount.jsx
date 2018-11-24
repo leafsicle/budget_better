@@ -3,48 +3,49 @@ import axios from 'axios'
 import DefaultHeader from './DefaultHeader'
 
 class NewAccount extends Component {
-	state = {
-		data: {
+	constructor() {
+		super()
+		this.state = {
 			name: '',
 			due_date: '',
-			recurring: {},
+			recurring: '',
 			amount_due: 0,
 			flow: '',
 			was_paid: '',
 			notes: ''
 		}
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
+	}
+
+	// handleChange(event) {
+	// 	this.setState({ name: event.target.value })
+	// }
+	handleChange(event) {
+		// check it out: we get the event.target.name (which will be either "email" or "password")
+		// and use it to target the key on our `state` object with the same name, using bracket syntax
+		this.setState({ [event.target.name]: event.target.value })
+		console.log(this.state)
+	}
+	handleSubmit(event) {
+		event.preventDefault()
+	}
+
+	handleClick = () => {
+		axios.post('http://localhost:3001/events.json', {
+			url: 'http://localhost:3001/events.json',
+			data: {
+				name: `${this.state.name}`,
+				due_date: '',
+				recurring: {},
+				amount_due: `${this.amount_due}`,
+				flow: '',
+				was_paid: '',
+				notes: ''
+			}
+		})
 	}
 	render() {
-		let handleClick = () => {
-			axios.post('http://localhost:3001/events.json', {
-				url: 'http://localhost:3001/events.json',
-				data: {
-					name: '.',
-					due_date: '',
-					recurring: {},
-					amount_due: 0,
-					flow: '',
-					was_paid: '',
-					notes: ''
-				}
-			})
-		}
-		let daily = {
-			interval: 1,
-			until: null,
-			count: null,
-			validations: null,
-			rule_type: 'IceCube::DailyRule'
-		}
-		let weekly = {
-			interval: 1,
-			until: null,
-			count: null,
-			validations: { day: [1] },
-			rule_type: 'IceCube::WeeklyRule',
-			week_start: 0
-		}
-
 		return (
 			<div className="container">
 				<DefaultHeader title="New Account" />
@@ -53,41 +54,41 @@ class NewAccount extends Component {
 				{/* This is the name of the account to be sent to the back end */}
 				{/* when is the account due?*/}
 				<form className="field">
-					<div className="control">
-						<label className="label">Account Name:</label>
+					<label className="label">
+						Account Name:
 						<input
 							className="input"
 							type="text"
-							value={this.props.name}
+							name="name" //{this.state.name}
+							onChange={this.handleChange}
 							placeholder="What is this account called?"
 						/>
-						<span className="validity" />
-					</div>
+					</label>
 				</form>
 
-				<div className="field new-account">
+				<form className="field new-account">
 					<div className="control">
 						<label className="label">When is this bill due?</label>
 						<input
 							className="input"
 							type="date"
-							value={this.props.due_date}
+							value={this.state.due_date}
 							required
 							placeholder=""
 						/>
 					</div>
-				</div>
+				</form>
 				{/* This is for how often the bill occurs*/}
 				<div className="field ">
 					<div className="control">
 						<label className="label">Frequency</label>
-						<select id="frequency">
+						<select id="frequency" onChange={this.handleChange}>
 							<option value="">How often does this occur?</option>
-							<option value={daily}>Daily</option>
-							<option value={weekly}>Weekly</option>
+							<option recurring="testcase">Daily</option>
+							{/* <option value="week">Weekly</option>
 							<option value="bi-weekly">Bi-weekly</option>
 							<option value="monthly">Monthly</option>
-							<option value="annual">Annually</option>
+							<option value="annual">Annually</option> */}
 						</select>
 					</div>
 				</div>
@@ -99,7 +100,7 @@ class NewAccount extends Component {
 					</div>
 				</div>
 				{/* How much is this bill? */}
-				<div className="field">
+				<div className="field" onChange={this.handleChange}>
 					<div className="control">
 						<label className="label">Amount Due</label>
 						<input
@@ -108,6 +109,7 @@ class NewAccount extends Component {
 							min="0"
 							max="10000"
 							placeholder="Amount in $"
+							name="amount_due"
 						/>
 					</div>
 				</div>
@@ -127,7 +129,7 @@ class NewAccount extends Component {
 				<div className="has-text-centered ">
 					{/* submit button to post to DB */}
 					<a href="/accounts">
-						<div className="button is-success" onClick={handleClick}>
+						<div className="button is-success" onClick={this.handleClick}>
 							Submit
 						</div>
 					</a>
