@@ -66,15 +66,15 @@ class NewAccount extends Component {
 					</label>
 				</form>
 
-				<form className="field new-account">
+				<form className="field">
 					<div className="control">
 						<label className="label">When is this bill due?</label>
 						<input
+							onChange={this.handleChange}
 							className="input"
 							type="date"
-							value={this.state.due_date}
-							required
-							placeholder=""
+							name="due_date"
+							value=""
 						/>
 					</div>
 				</form>
