@@ -15,8 +15,8 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Stack} />
 						<Route path="/accounts" component={Accounts} />
-						<Route path="/accountpage" component={AccountPage} />
-						<Route path="/newaccount" component={NewAccount} />
+						<Route path="/accountPage/:id" component={AccountPage} />
+						<Route path="/newAccount" component={NewAccount} />
 						<Route path="/calendar" component={Calendar} />
 					</Switch>
 				</Router>

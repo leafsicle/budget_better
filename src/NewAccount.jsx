@@ -18,32 +18,29 @@ class NewAccount extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
-	// handleChange(event) {
-	// 	this.setState({ name: event.target.value })
-	// }
 	handleChange(event) {
 		// check it out: we get the event.target.name (which will be either "email" or "password")
 		// and use it to target the key on our `state` object with the same name, using bracket syntax
-		this.setState({ [event.target.name]: event.target.value })
-		console.log(this.state)
+		this.setState(
+			{ [event.target.name]: event.target.value },
+			console.log(this.state)
+		)
 	}
 	handleSubmit(event) {
-		event.preventDefault()
-	}
-
-	handleClick = () => {
-		axios.post('http://localhost:3001/events.json', {
-			url: 'http://localhost:3001/events.json',
-			data: {
-				name: `${this.state.name}`,
-				due_date: '',
-				recurring: {},
-				amount_due: `${this.amount_due}`,
-				flow: '',
-				was_paid: '',
-				notes: ''
-			}
-		})
+		if (event.keyCode === 13)
+			// event.preventDefault()
+			axios.post('http://localhost:3001/events.json', {
+				url: 'http://localhost:3001/events.json',
+				data: {
+					name: `${this.state.name}`,
+					due_date: '',
+					recurring: {},
+					amount_due: `${this.amount_due}`,
+					flow: '',
+					was_paid: '',
+					notes: ''
+				}
+			})
 	}
 	render() {
 		return (
@@ -66,6 +63,7 @@ class NewAccount extends Component {
 					</label>
 				</form>
 
+				{/* When is the bill due with a calendar */}
 				<form className="field">
 					<div className="control">
 						<label className="label">When is this bill due?</label>
@@ -78,13 +76,35 @@ class NewAccount extends Component {
 						/>
 					</div>
 				</form>
+
+				{/* is this income or an expense? */}
+				<form className="field">
+					<div className="control">
+						<label className="label">Is this income or an expense?</label>
+						<input
+							onChange={this.handleChange}
+							type="radio"
+							name="flow"
+							value="income"
+						/>{' '}
+						Income
+						<input
+							onChange={this.handleChange}
+							type="radio"
+							name="flow"
+							value="expense"
+						/>{' '}
+						expense
+					</div>
+				</form>
+
 				{/* This is for how often the bill occurs*/}
 				<div className="field ">
 					<div className="control">
 						<label className="label">Frequency</label>
 						<select id="frequency" onChange={this.handleChange}>
 							<option value="">How often does this occur?</option>
-							<option recurring="testcase">Daily</option>
+							<option recurring="This Worked!">Daily</option>
 							{/* <option value="week">Weekly</option>
 							<option value="bi-weekly">Bi-weekly</option>
 							<option value="monthly">Monthly</option>
@@ -129,7 +149,7 @@ class NewAccount extends Component {
 				<div className="has-text-centered ">
 					{/* submit button to post to DB */}
 					<a href="/accounts">
-						<div className="button is-success" onClick={this.handleClick}>
+						<div className="button is-success" onClick={this.handleSubmit}>
 							Submit
 						</div>
 					</a>

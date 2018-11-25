@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import BigCalendar from 'react-big-calendar-like-google'
-import moment from 'moment'
+// import BigCalendar from 'react-big-calendar-like-google'
+// import moment from 'moment'
 import DefaultHeader from './DefaultHeader'
 
 class Calendar extends Component {

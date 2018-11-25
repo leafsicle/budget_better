@@ -1,28 +1,20 @@
 import React, { Component } from 'react'
 import DefaultHeader from './DefaultHeader'
+import { AlertError } from 'material-ui/svg-icons'
 
 class AccountPage extends Component {
 	render() {
-		console.log(this.props.match.params)
-		// 	let deleteAccount = () => {
-		// 		alert('Are you sure?')
-		// 		axios.delete('http://localhost:3001/events/:id', {
-		// 			data: {
-		// 				name: '',
-		// 				due_date: '',
-		// 				recurring: {},
-		// 				amount_due: 3,
-		// 				flow: 'expense',
-		// 				was_paid: false,
-		// 				notes: ''
-		// 			}
-		// 		})
+		let testClicks = () => {
+			if (window.confirm('Are you sure you wish to delete this item?'))
+				this.onCancel(this)
+		}
 		return (
 			<div>
 				<DefaultHeader title={this.props.name} />
-
+				<div className="button is-danger is-pulled-right" onClick={testClicks}>
+					X
+				</div>
 				<p>I will be a page that displays information about a single account</p>
-				{/* I will be a page that displays information about a single account */}
 			</div>
 		)
 	}

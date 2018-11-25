@@ -24,14 +24,15 @@ class Account extends Component {
 		// paid={event.was_paid}
 
 		return (
-			<div className={this.props.className}>
-				{/* Stats and presentation about each account will be here! */}
+			<a href="/accountPage/" className="box is-centered">
+				<div className="">
+					{/* Stats and presentation about each account will be here! */}
 
-				<h2>
-					{/* <strong>Account name:</strong> */}
-					{this.props.name}
-				</h2>
-				{/* <p>
+					<h2>
+						{/* <strong>Account name:</strong> */}
+						{this.props.name}
+					</h2>
+					{/* <p>
 					<strong>Amount due: </strong>${this.props.amount}
 				</p>
 				<p>
@@ -46,7 +47,8 @@ class Account extends Component {
 					<strong>Notes: </strong>
 					{this.props.notes}
 				</p> */}
-			</div>
+				</div>
+			</a>
 		)
 	}
 }

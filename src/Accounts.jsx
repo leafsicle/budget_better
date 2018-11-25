@@ -22,23 +22,21 @@ class Accounts extends Component {
 		return (
 			<div className="">
 				<DefaultHeader title="Accounts" />
-				{/* Each account will be listed here using a .Map function to generate a <tr> for each */}
-				<div className="">
-					<a href="/accountPage" className="">
-						{this.state.events.map((event, index) => (
-							<Account
-								className=""
-								key={index}
-								name={event.name}
-								dueDate={event.due_date}
-								frequency={event.recurring}
-								amount={event.amount_due}
-								flow={event.flow}
-								paid={event.was_paid}
-								notes={event.notes}
-							/>
-						))}
-					</a>
+				{/* Each account will be listed here using a .Map function to generate each */}
+				<div className="has-text-centered accounts">
+					{this.state.events.map((event, index) => (
+						<Account
+							className="this.props.className"
+							key={index}
+							name={event.name}
+							dueDate={event.due_date}
+							frequency={event.recurring}
+							amount={event.amount_due}
+							flow={event.flow}
+							paid={event.was_paid}
+							notes={event.notes}
+						/>
+					))}
 				</div>
 			</div>
 		)
