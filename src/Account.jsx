@@ -7,6 +7,8 @@ class Account extends Component {
 	}
 
 	componentWillMount() {
+		console.log(this.props)
+
 		axios
 			.get('http://localhost:3001/events.json')
 			.then(response => {
@@ -14,39 +16,14 @@ class Account extends Component {
 			})
 			.catch(error => console.log(error))
 	}
-
 	render() {
-		// name={event.name}
-		// dueDate={event.due_date}
-		// frequency={event.recurring}
-		// amount={event.amount_due}
-		// flow={event.flow}
-		// paid={event.was_paid}
-
 		return (
-			<a href="/accountPage/" className="box is-centered">
+			<a href={`accountPage/${this.props.id}`} className="box is-centered">
 				<div className="">
 					{/* Stats and presentation about each account will be here! */}
-
 					<h2>
-						{/* <strong>Account name:</strong> */}
-						{this.props.name}
+						<strong>{this.props.name}</strong>
 					</h2>
-					{/* <p>
-					<strong>Amount due: </strong>${this.props.amount}
-				</p>
-				<p>
-					<strong>Due date: </strong>
-					{this.props.dueDate}
-				</p>
-				<p>
-					<strong>Type: </strong>
-					{this.props.flow}
-				</p>
-				<p>
-					<strong>Notes: </strong>
-					{this.props.notes}
-				</p> */}
 				</div>
 			</a>
 		)

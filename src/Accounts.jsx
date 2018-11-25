@@ -13,7 +13,6 @@ class Accounts extends Component {
 			.get('http://localhost:3001/events.json')
 			.then(response => {
 				this.setState({ events: response.data })
-				// console.log(response.data)
 			})
 			.catch(error => console.log(error))
 	}
@@ -26,8 +25,8 @@ class Accounts extends Component {
 				<div className="has-text-centered accounts">
 					{this.state.events.map((event, index) => (
 						<Account
-							className="this.props.className"
 							key={index}
+							id={index}
 							name={event.name}
 							dueDate={event.due_date}
 							frequency={event.recurring}
