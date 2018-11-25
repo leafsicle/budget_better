@@ -8,10 +8,10 @@ class NewAccount extends Component {
 		this.state = {
 			name: '',
 			due_date: '',
-			recurring: '',
+			// recurring: '',
 			amount_due: 0,
 			flow: '',
-			was_paid: '',
+			was_paid: 'false',
 			notes: ''
 		}
 		this.handleChange = this.handleChange.bind(this)
@@ -29,22 +29,22 @@ class NewAccount extends Component {
 	handleSubmit(event) {
 		if (event.keyCode === 13)
 			// event.preventDefault()
-			axios.post('http://localhost:3001/events.json', {
-				url: 'http://localhost:3001/events.json',
+			axios.post('http://localhost:3001/events/new.json', {
+				url: 'http://localhost:3001/events/new.json',
 				data: {
 					name: `${this.state.name}`,
-					due_date: '',
-					recurring: {},
+					due_date: `${this.state.due_date}`,
+					// recurring: {},
 					amount_due: `${this.amount_due}`,
-					flow: '',
-					was_paid: '',
-					notes: ''
+					flow: `${this.state.flow}`,
+					was_paid: `${this.state.was_paid}`,
+					notes: `${this.state.notes}`
 				}
 			})
 	}
 	render() {
 		return (
-			<div className="container">
+			<div className="container ">
 				<DefaultHeader title="New Account" />
 				{/* This is where you will add a new account!! */}
 
@@ -72,7 +72,7 @@ class NewAccount extends Component {
 							className="input"
 							type="date"
 							name="due_date"
-							value=""
+							value={this.due_date}
 						/>
 					</div>
 				</form>
@@ -86,37 +86,39 @@ class NewAccount extends Component {
 							type="radio"
 							name="flow"
 							value="income"
-						/>{' '}
-						Income
+							className="moveMe"
+						/>
+						Income <br />
 						<input
 							onChange={this.handleChange}
 							type="radio"
 							name="flow"
 							value="expense"
-						/>{' '}
-						expense
+							className="moveMe"
+						/>
+						Expense
 					</div>
 				</form>
 
 				{/* This is for how often the bill occurs*/}
 				<div className="field ">
 					<div className="control">
-						<label className="label">Frequency</label>
-						<select id="frequency" onChange={this.handleChange}>
+						{/* <label className="label">Frequency</label> */}
+						{/* <select id="frequency" onChange={this.handleChange}>
 							<option value="">How often does this occur?</option>
-							<option recurring="This Worked!">Daily</option>
-							{/* <option value="week">Weekly</option>
+							<option recurring="This Worked!">Daily</option> */}
+						{/* <option value="week">Weekly</option>
 							<option value="bi-weekly">Bi-weekly</option>
 							<option value="monthly">Monthly</option>
 							<option value="annual">Annually</option> */}
-						</select>
+						{/* </select> */}
 					</div>
 				</div>
 				{/* Was this bill paid or not paid? */}
 				<div className="field">
 					<div className="control">
 						<label className="label">Was this bill paid?</label>
-						<input className="w3-check" type="checkbox" />
+						<input className="w3-check moveMe" type="checkbox" />
 					</div>
 				</div>
 				{/* How much is this bill? */}
@@ -134,10 +136,11 @@ class NewAccount extends Component {
 					</div>
 				</div>
 				{/* Notes for the account */}
-				<div className="field">
+				<div className="field" onChange={this.handleChange}>
 					<div className="control">
 						<label className="label">Notes:</label>
 						<input
+							name="notes"
 							className="input"
 							type="text"
 							placeholder="account number etc..."
