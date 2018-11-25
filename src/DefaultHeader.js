@@ -10,15 +10,14 @@ class DefaultHeader extends Component {
 					<a href="/">{this.props.title} </a>
 				</div>
 
-				<div className="level-item-2 headerR ">
-					<a href="/NewAccount" className="button is-hidden-touch">
-						<p>add account</p>
-					</a>
-				</div>
+				<div className="level-item-2 headerR " />
 
 				<div className="level-item-2 is-light headerR ">
 					<a href="/NewAccount" className="button is-hidden-desktop">
 						+
+					</a>
+					<a href="/NewAccount" className="button is-hidden-touch">
+						<p>add account</p>
 					</a>
 				</div>
 			</header>
