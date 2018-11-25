@@ -19,28 +19,24 @@ class NewAccount extends Component {
 	}
 
 	handleChange(event) {
-		// check it out: we get the event.target.name (which will be either "email" or "password")
-		// and use it to target the key on our `state` object with the same name, using bracket syntax
 		this.setState(
 			{ [event.target.name]: event.target.value },
 			console.log(this.state)
 		)
 	}
 	handleSubmit(event) {
-		if (event.keyCode === 13)
-			// event.preventDefault()
-			axios.post('http://localhost:3001/events/new.json', {
-				url: 'http://localhost:3001/events/new.json',
-				data: {
-					name: `${this.state.name}`,
-					due_date: `${this.state.due_date}`,
-					// recurring: {},
-					amount_due: `${this.amount_due}`,
-					flow: `${this.state.flow}`,
-					was_paid: `${this.state.was_paid}`,
-					notes: `${this.state.notes}`
-				}
-			})
+		alert('are you sure')
+		axios.post('http://localhost:3001/events', {
+			event: {
+				name: `${this.state.name}`,
+				due_date: `${this.state.due_date}`,
+				// recurring: {},
+				amount_due: `${this.amount_due}`,
+				flow: `${this.state.flow}`,
+				was_paid: `${this.state.was_paid}`,
+				notes: `${this.state.notes}`
+			}
+		})
 	}
 	render() {
 		return (
