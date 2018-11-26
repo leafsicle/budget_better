@@ -67,6 +67,7 @@ class NewAccount extends Component {
 						/>
 					</label>
 				</form>
+
 				{/* When is the bill due with a calendar */}
 				<form className="field">
 					<div className="control">
@@ -80,6 +81,35 @@ class NewAccount extends Component {
 						/>
 					</div>
 				</form>
+				{/* This is for how often the bill occurs*/}
+				<div className="field ">
+					<div className="control">
+						<label className="label">Frequency</label>
+						<select id="" onChange={this.handleChange}>
+							<option value="">How often does this occur?</option>
+							<option recurring="This Worked!">Daily</option>
+							<option value="week">Weekly</option>
+							<option value="bi-weekly">Bi-weekly</option>
+							<option value="monthly">Monthly</option>
+							<option value="annual">Annually</option>
+						</select>
+					</div>
+				</div>
+				{/* How much is this bill? */}
+				<div className="field" onChange={this.handleChange}>
+					<div className="control">
+						<label className="label">Amount Due</label>
+						<input
+							className="input"
+							type="number"
+							min="0"
+							max="10000"
+							placeholder="Amount in $"
+							name="amount_due"
+							value={this.props.amount_due}
+						/>
+					</div>
+				</div>
 				{/* is this income or an expense? */}
 				<form className="field">
 					<div className="control">
@@ -102,20 +132,6 @@ class NewAccount extends Component {
 						Expense
 					</div>
 				</form>
-				{/* This is for how often the bill occurs*/}
-				<div className="field ">
-					<div className="control">
-						<label className="label">Frequency</label>
-						<select id="" onChange={this.handleChange}>
-							<option value="">How often does this occur?</option>
-							<option recurring="This Worked!">Daily</option>
-							<option value="week">Weekly</option>
-							<option value="bi-weekly">Bi-weekly</option>
-							<option value="monthly">Monthly</option>
-							<option value="annual">Annually</option>
-						</select>
-					</div>
-				</div>
 				{/* Was this bill paid or not paid? */}
 				<div className="field">
 					<div className="control">
@@ -129,21 +145,7 @@ class NewAccount extends Component {
 						/>
 					</div>
 				</div>
-				{/* How much is this bill? */}
-				<div className="field" onChange={this.handleChange}>
-					<div className="control">
-						<label className="label">Amount Due</label>
-						<input
-							className="input"
-							type="number"
-							min="0"
-							max="10000"
-							placeholder="Amount in $"
-							name="amount_due"
-							value={this.props.amount_due}
-						/>
-					</div>
-				</div>
+
 				{/* Notes for the account */}
 				<div className="field" onChange={this.handleChange}>
 					<div className="control">

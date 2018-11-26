@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import DefaultHeader from './DefaultHeader'
-import Account from './Account'
 import axios from 'axios'
 
 class AccountPage extends Component {
@@ -13,7 +12,7 @@ class AccountPage extends Component {
 		axios
 			.get('http://localhost:3001/events.json')
 			.then(response => {
-				console.log(response.data)
+				// console.log(response.data)
 				this.setState({
 					account: response.data[id],
 					loading: false
@@ -21,6 +20,19 @@ class AccountPage extends Component {
 			})
 			.catch(error => console.log(error))
 	}
+
+	componentDidMount() {
+		axios
+			.patch(`http://localhost:3001/events/${this.state.account}`)
+			.then(response => {
+				this.setState({
+					account: response.data,
+					loading: false
+				})
+			})
+			.catch(error => console.log(error))
+	}
+
 	render() {
 		console.log(this)
 		let testClicks = () => {
