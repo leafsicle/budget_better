@@ -33,7 +33,6 @@ class NewAccount extends Component {
 	}
 
 	handleSubmit(event) {
-		alert('are you sure')
 		axios.post('http://localhost:3001/events', {
 			event: {
 				name: this.state.name,
@@ -52,8 +51,7 @@ class NewAccount extends Component {
 				<DefaultHeader title="New Account" />
 
 				{/* This is where you will add a new account!! */}
-				{/* This is the name of the account to be sent to the back end */}
-				{/* when is the account due?*/}
+
 				<form className="field">
 					<label className="label">
 						Account Name:

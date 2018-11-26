@@ -6,13 +6,21 @@ class AccountPage extends Component {
 	state = {
 		loading: true
 	}
+
+	handleDelete = () => {
+		axios
+			.delete('http://localhost:3001/events/' + this.state.account.id + '.json')
+			.then(data => {
+				this.props.history.push('/accounts')
+			})
+	}
+
 	componentWillMount() {
 		const id = this.props.match.params.id
 
 		axios
 			.get('http://localhost:3001/events.json')
 			.then(response => {
-				// console.log(response.data)
 				this.setState({
 					account: response.data[id],
 					loading: false
@@ -22,18 +30,13 @@ class AccountPage extends Component {
 	}
 
 	render() {
-		console.log(this)
-		let testClicks = () => {
-			if (window.confirm('Are you sure you wish to delete this item?'))
-				this.onCancel(this)
-		}
 		if (this.state.loading) {
 			return <DefaultHeader title="Loading..." />
 		} else {
+			console.log(`http://localhost:3001/events/` + this.state.account.id)
 			return (
 				<div className="container">
 					<DefaultHeader title={`${this.state.account.name}`} />
-					{/* <Account /> */}
 					<table className="table is-bordered ">
 						<tbody>
 							<tr>
@@ -48,15 +51,19 @@ class AccountPage extends Component {
 								<td>Income or Expense?</td>
 								<td>{this.state.account.flow}</td>
 							</tr>
+							<tr>
+								<td>Notes</td>
+								<td>{this.state.account.notes}</td>
+							</tr>
 						</tbody>
 					</table>
 
 					<div className="has-text-centered ">
 						{/* delete button to remove from DB */}
-						<a href={`/accounts`}>
+						<a>
 							<div
 								className="button is-danger is-pulled-right"
-								onClick={testClicks}
+								onClick={this.handleDelete}
 							>
 								x
 							</div>
