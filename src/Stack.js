@@ -34,29 +34,20 @@ class Stack extends Component {
 	}
 	render() {
 		return (
-			<main className="">
+			<main className="is-fluid container">
 				<DefaultHeader title="Budget Better" />
 
+				{/* Overall card with working link */}
+
+				<div className="is-fluid title">
+					<p className="accounts">Overall Balance: ${this.state.totalBudget}</p>
+				</div>
 				<div className="container card-container">
-					{/* Overall card with working link */}
-
-					{/* <h1 className="title">
-						Overall account balance is ${this.state.totalBudget}
-					</h1> */}
-					<Card
-						className="title"
-						cardName="The current total is"
-						cardValue={`$${this.state.totalBudget}`}
-					/>
-
-					{/* These will be the unpaid accounts possibly */}
-					{/* <Card cardName="remaining payments to be made" /> */}
-
 					{/* Accounts card with working link */}
 					<Card className="title" cardName="Accounts" urlLink="/accounts" />
 
 					{/* Upcoming bills. Needs redirect */}
-					<Card className="title" cardName="Calendar" urlLink="/calendar" />
+					{/* <Card className="title" cardName="Calendar" urlLink="/calendar" /> */}
 				</div>
 			</main>
 		)
