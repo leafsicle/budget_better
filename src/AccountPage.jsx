@@ -21,18 +21,6 @@ class AccountPage extends Component {
 			.catch(error => console.log(error))
 	}
 
-	componentDidMount() {
-		axios
-			.patch(`http://localhost:3001/events/${this.state.account}`)
-			.then(response => {
-				this.setState({
-					account: response.data,
-					loading: false
-				})
-			})
-			.catch(error => console.log(error))
-	}
-
 	render() {
 		console.log(this)
 		let testClicks = () => {
@@ -65,7 +53,7 @@ class AccountPage extends Component {
 
 					<div className="has-text-centered ">
 						{/* delete button to remove from DB */}
-						<a href="/accounts">
+						<a href={`/accounts`}>
 							<div
 								className="button is-danger is-pulled-right"
 								onClick={testClicks}

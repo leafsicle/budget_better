@@ -34,7 +34,6 @@ class NewAccount extends Component {
 
 	handleSubmit(event) {
 		alert('are you sure')
-
 		axios.post('http://localhost:3001/events', {
 			event: {
 				name: this.state.name,
