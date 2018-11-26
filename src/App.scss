@@ -2,7 +2,7 @@
 // global
 // *********************************
 :root {
-  background-color: #f5f5f5;
+  background-color: #fffff0;
   width: 100vw;
 }
 
@@ -19,7 +19,7 @@ a:visited {
 }
 
 .container {
-  padding: 5px;
+  padding: 0 5px 5px 5px;
 
   .moveMe {
     margin: 5px 20px;
@@ -36,7 +36,7 @@ header {
   border-bottom-style: groove;
   justify-content: space-between;
   color: #f5f5f5;
-  background-color: #4068ee;
+  background-color: #084887;
   width: inherit;
   padding: 5px;
 
@@ -77,7 +77,7 @@ header {
         max-width: 90vw;
         display: flex;
         justify-content: center;
-        background-color: white;
+        background-color: #fff;
         border-radius: 10px;
       }
     }

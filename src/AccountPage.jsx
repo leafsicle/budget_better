@@ -1,48 +1,69 @@
 import React, { Component } from 'react'
 import DefaultHeader from './DefaultHeader'
 import Account from './Account'
+import axios from 'axios'
 
 class AccountPage extends Component {
 	state = {
-		id: this.props.id,
-		key: this.props.key,
-		name: this.props.name,
-		dueDate: this.props.due_date,
-		frequency: this.props.recurring,
-		amount: this.props.amount_due,
-		flow: this.props.flow,
-		paid: this.props.was_paid,
-		notes: this.props.notes,
-		events: []
+		loading: true
 	}
+	componentWillMount() {
+		const id = this.props.match.params.id
 
+		axios
+			.get('http://localhost:3001/events.json')
+			.then(response => {
+				console.log(response.data)
+				this.setState({
+					account: response.data[id],
+					loading: false
+				})
+			})
+			.catch(error => console.log(error))
+	}
 	render() {
-		console.log(this.state)
+		console.log(this)
 		let testClicks = () => {
 			if (window.confirm('Are you sure you wish to delete this item?'))
 				this.onCancel(this)
 		}
-		return (
-			<div>
-				<DefaultHeader title={this.props.title} />
-				<Account />
-				<section className="controls">
-					<div
-						className="button is-danger is-pulled-right"
-						onClick={testClicks}
-					>
-						X
+		if (this.state.loading) {
+			return <DefaultHeader title="Loading..." />
+		} else {
+			return (
+				<div className="container">
+					<DefaultHeader title={`${this.state.account.name}`} />
+					{/* <Account /> */}
+					<div className="card is-centered">
+						<p>
+							<strong>{this.state.account.amount_due}</strong>
+						</p>
+						<p>
+							<strong>{this.state.account.due_date}</strong>
+						</p>
+						<p>
+							<strong>{this.state.account.was_paid}</strong>
+						</p>
 					</div>
-					<br />
-					<br />
-					<br />
-					<div className="button is-pulled-right">
-						<a href="/accounts">Back</a>
+
+					<div className="has-text-centered ">
+						{/* delete button to remove from DB */}
+						<a href="/accounts">
+							<div
+								className="button is-danger is-pulled-right"
+								onClick={testClicks}
+							>
+								x
+							</div>
+						</a>
+						{/* Returns back to the accounts page */}
+						<a href="/accounts">
+							<div className="button is-info is-pulled-right">back</div>
+						</a>
 					</div>
-				</section>
-				<p>I will be a page that displays information about a single account</p>
-			</div>
-		)
+				</div>
+			)
+		}
 	}
 }
 

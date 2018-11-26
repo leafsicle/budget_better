@@ -26,7 +26,7 @@ class Accounts extends Component {
 					{this.state.events.map((event, index) => (
 						<Account
 							key={index}
-							// id={index}
+							id={index}
 							name={event.name}
 							dueDate={event.due_date}
 							frequency={event.recurring}

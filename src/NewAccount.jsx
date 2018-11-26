@@ -11,7 +11,7 @@ class NewAccount extends Component {
 			// recurring: '',
 			amount_due: 0,
 			flow: '',
-			was_paid: 0,
+			was_paid: false,
 			notes: ''
 		}
 		this.handleChange = this.handleChange.bind(this)
@@ -19,20 +19,28 @@ class NewAccount extends Component {
 	}
 
 	handleChange(event) {
-		this.setState(
-			{ [event.target.name]: event.target.value },
+		// if this a checkbox we want to get the information from the status of it being checked or not
+		// otherwise, get the input's value
+		const value =
+			event.target.type === 'checkbox'
+				? event.target.checked
+				: event.target.value
+
+		this.setState({ [event.target.name]: value }, () => {
+			console.log('state is updated and is equal to')
 			console.log(this.state)
-		)
+		})
 	}
 
 	handleSubmit(event) {
 		alert('are you sure')
+
 		axios.post('http://localhost:3001/events', {
 			event: {
 				name: this.state.name,
 				recurring: this.state.frequency,
 				due_date: this.state.due_date,
-				amount_due: this.amount_due,
+				amount_due: this.state.amount_due,
 				flow: this.state.flow,
 				was_paid: this.state.was_paid,
 				notes: this.state.notes
@@ -98,7 +106,7 @@ class NewAccount extends Component {
 				<div className="field ">
 					<div className="control">
 						<label className="label">Frequency</label>
-						<select id="frequency" onChange={this.handleChange}>
+						<select id="" onChange={this.handleChange}>
 							<option value="">How often does this occur?</option>
 							<option recurring="This Worked!">Daily</option>
 							<option value="week">Weekly</option>
@@ -117,11 +125,7 @@ class NewAccount extends Component {
 							className="w3-check moveMe"
 							type="checkbox"
 							name="was_paid"
-							value="1"
-							was_paid={this.state.was_paid}
-							// onClick={this.setState(prevState => ({
-							// 	check: !prevState.check
-							// }))}
+							value={this.state.was_paid}
 						/>
 					</div>
 				</div>
@@ -136,6 +140,7 @@ class NewAccount extends Component {
 							max="10000"
 							placeholder="Amount in $"
 							name="amount_due"
+							value={this.props.amount_due}
 						/>
 					</div>
 				</div>

@@ -39,6 +39,10 @@ class Stack extends Component {
 
 				<div className="container card-container">
 					{/* Overall card with working link */}
+
+					{/* <h1 className="title">
+						Overall account balance is ${this.state.totalBudget}
+					</h1> */}
 					<Card
 						className="title"
 						cardName="The current total is"
