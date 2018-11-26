@@ -34,17 +34,22 @@ class AccountPage extends Component {
 				<div className="container">
 					<DefaultHeader title={`${this.state.account.name}`} />
 					{/* <Account /> */}
-					<div className="card is-centered">
-						<p>
-							<strong>{this.state.account.amount_due}</strong>
-						</p>
-						<p>
-							<strong>{this.state.account.due_date}</strong>
-						</p>
-						<p>
-							<strong>{this.state.account.was_paid}</strong>
-						</p>
-					</div>
+					<table className="table is-bordered ">
+						<tbody>
+							<tr>
+								<td>Amount</td>
+								<td>{this.state.account.amount_due}</td>
+							</tr>
+							<tr>
+								<td>Date due</td>
+								<td>{this.state.account.due_date}</td>
+							</tr>
+							<tr>
+								<td>Income or Expense?</td>
+								<td>{this.state.account.flow}</td>
+							</tr>
+						</tbody>
+					</table>
 
 					<div className="has-text-centered ">
 						{/* delete button to remove from DB */}

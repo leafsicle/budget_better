@@ -130,7 +130,16 @@ header {
 // *********************************
 // Accounts modifiers
 // *********************************
+.table {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  background-color: #fffff0;
 
+  td {
+    background-color: #fff;
+  }
+}
 // *********************************
 // New Account.js mods
 // *********************************

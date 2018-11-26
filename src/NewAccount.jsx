@@ -88,7 +88,7 @@ class NewAccount extends Component {
 							onChange={this.handleChange}
 							type="radio"
 							name="flow"
-							value="income"
+							value="Income"
 							className="moveMe"
 						/>
 						Income <br />
@@ -96,7 +96,7 @@ class NewAccount extends Component {
 							onChange={this.handleChange}
 							type="radio"
 							name="flow"
-							value="expense"
+							value="Expense"
 							className="moveMe"
 						/>
 						Expense

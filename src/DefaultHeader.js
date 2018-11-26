@@ -6,7 +6,7 @@ class DefaultHeader extends Component {
 		return (
 			<header className="container is-success is-bold level is-mobile">
 				{/* this is for the name of the page that the user is currently on */}
-				<div className="headerL level-item">
+				<div className="headerL level-item is-size-3">
 					<a href="/">{this.props.title} </a>
 				</div>
 
